@@ -1,0 +1,145 @@
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #2AAAEA;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+#search-bar {
+    width: 100%;
+    margin: 0 auto 15px auto;
+    height: 45px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    padding-left: 5px;
+    font-size: 1.2rem;
+}
+
+.header .logo {
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.929);
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.742);
+}
+
+.header .logo:hover {
+    cursor: pointer;
+}
+
+.header .log-but {
+    min-width: 54px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    width: 60px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+.header .log-but:hover {
+    border: 1px solid black;
+    cursor: pointer;
+    transform: scale(1.1);
+    font-size: .8rem;
+}
+
+.header .header-nav {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: 0 5px;
+}
+
+.header .pag-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header .pag-nav .nav-button {
+    background-color: rgba(255, 255, 255, 0.536);
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 90px;
+    height: 35px;
+    text-transform: uppercase;
+    transition: border-width 0.3s linear;
+}
+
+.header .pag-nav :not(.active) .nav-button:hover {
+    background-color: rgb(188, 232, 247);
+    cursor: pointer;
+    transform: scale(1.08);
+    box-shadow: 1px 1px 2px white;
+}
+
+.tw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tw .link:not(:last-of-type) {
+    margin-right: 15px;
+    padding: 15px 15px 15px 0;
+    border-right: 1px solid white;
+}
+.tw .link {
+    color: white;
+    text-decoration: none;
+}
+.tw .link:hover {
+    cursor: pointer;
+}
+
+.pag-nav .nav-button::after {
+    border-radius: 0 0 4px 4px;
+}
+
+.pag-nav .nav-button {
+    position: relative;
+}
+
+.pag-nav .nav-button::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 10%;
+    width: 0%;
+    background-color: white;
+    border-radius: 0 0 4px 4px;
+    transition: width .3s linear;
+}
+
+.pag-nav .active .nav-button::after {
+    width: 100%;
+    transition: width .3s linear;
+
+}
+.header .cart-but {
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    font-size: 150%;
+    border: none;
+    margin-left: 15px;
+}
+.header .cart-but:hover {
+    cursor: pointer;
+}

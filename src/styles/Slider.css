@@ -1,0 +1,28 @@
+.slide {
+    position: relative;
+}
+.slider-buts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    width: 5vw;
+    height: 5vw;
+    font-size: 4vw;
+}
+.slider-buts:hover {
+    background-color: rgba(255, 255, 255, 0.341);
+    cursor: pointer;
+}
+.left-but {
+    left: 1%;
+}
+.rigth-but {
+    right: 1%;
+}

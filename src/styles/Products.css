@@ -1,0 +1,51 @@
+.prod-container {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+}
+.prod-wraper {
+  width: 25%;
+  height: 30vw;
+  margin: 0 2%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30vw;
+  position: relative;
+  color: white;
+  transition: background 0.3s ease-out;
+}
+.prod {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.381);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3vw;
+  font-size: 1.9vw;
+  transition: background 0.3s ease-out;
+  color: white;
+}
+.prod:hover {
+  background-color: rgba(0, 0, 0, 0.182);
+  transition: all 0.3s ease-in-out;
+  transition: font-size 0s none;
+}
+.prod-wraper:hover {
+  transition: all 0.3s ease-in-out;
+  background-size: 35vw;
+}
+.prod-wraper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.35vw;
+  width: 0%;
+  background-color: #2aaaea;
+  transition: width 0.4s ease-in;
+}
+.prod-wraper:hover::after {
+  width: 100%;
+}

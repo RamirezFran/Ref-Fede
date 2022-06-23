@@ -1,0 +1,21 @@
+.cart-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+.cart-items .prod-cont {
+    margin: 1rem;
+    display: flex;
+}
+.cart-items .prod-cont .image {
+    height: 100%;
+}
+.cart-items .prod-cont .prod-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(196, 196, 196);
+}

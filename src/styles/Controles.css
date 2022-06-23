@@ -1,0 +1,58 @@
+.controls-bar {
+    display: flex;
+    border: 1px solid black;
+    margin: 20% 0;
+    width: 25%;
+    min-width: 180px;
+    position: relative;
+    font-size: 1.2rem;
+    align-self: flex-start;
+    padding: 10px;
+    max-width: 20%;
+}
+.categ-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    background-color: rgb(241, 241, 241);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 2.5%;
+}
+.categ-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.categ-list-item {
+    padding: 1rem;
+}
+.categ-list-item:hover {
+    cursor: pointer;
+}
+.categ-list-item .icon {
+    font-size: 80%;
+}
+.edad {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: flex-start;
+}
+.edad-bar {
+    max-width: 20%;
+    margin-left: 10px;
+}
+.slider-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+.slider {
+    width: 128px;
+}
+.categ-list-item select {
+    text-transform: capitalize;
+}
