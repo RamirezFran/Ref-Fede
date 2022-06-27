@@ -24,10 +24,6 @@ export default function LogIn({logFn, toggleLogIn}) {
         console.log("is valid " + valid)
         if (valid) {
             console.log(formState)
-            // setUsers(oldUsers => {
-            //     oldUsers.push({name: formState.name, email: formState.email, password: formState.password,})
-            //     return oldUsers
-            // })
             users.push({name: formState.name, email: formState.email, password: formState.password,})
             localStorage.setItem("usersArr", JSON.stringify(users))
             setUsers(localStorage.getItem("usersArr") ? JSON.parse(localStorage.getItem("usersArr")) : [])

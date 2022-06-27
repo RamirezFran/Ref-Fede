@@ -140,8 +140,9 @@ function getAgeEmoji(age, gender) {
 function CatalogItem({ image, name, phone, country, age, gender, item, identifier }) {
 
   function addToCart(item) {
+    const identItem = {...item, identifier: identifier}
     const oldArr = localStorage.getItem("cartProds") ? JSON.parse(localStorage.getItem("cartProds")) : []
-    oldArr.push({...item, identifier: identifier})
+    oldArr.push(identItem)
     localStorage.setItem("cartProds", JSON.stringify(oldArr))
   }
 
@@ -155,5 +156,5 @@ function CatalogItem({ image, name, phone, country, age, gender, item, identifie
       <p><span className="icon">🌎</span> {country}</p>
       <p><span className="icon">{getAgeEmoji(age, gender)}</span>{`Edad ${age}`}</p>
     </div>
-  );
+  )
 }

@@ -1,33 +1,34 @@
 const sliderInfo = [
     {
         img: "https://refrigeracionescobar.com.ar/wp-content/uploads/2018/01/slider_escobar2-1.png",
-        title: "Expecialistas",
-        text: "En bablalbalblab",
+        title: "",
+        text: "",
     },
     {
         img: "https://refrigeracionescobar.com.ar/wp-content/uploads/2018/09/slider_escobar-4_1600x600.png",
-        title: "Timberos",
-        text: "Pim pum pam mamita",
+        title: "",
+        text: "",
     },
     {
         img: "https://refrigeracionescobar.com.ar/wp-content/uploads/2018/01/slider_escobar-1.png",
-        title: "Leñadores",
-        text: "Leña para el carbon",
+        title: "",
+        text: "",
     },
     {
         img: "https://refrigeracionescobar.com.ar/wp-content/uploads/2018/09/slider_escobar-3_1600x600-1.png",
-        title: "Mamasita",
-        text: "ekisde de ekis de de",
+        title: "",
+        text: "",
     }
 ]
+// 
 const staffAccounts = [
     {
-        email: "franramirez_1998@hotmail.com",
+        email: "frram",
         admin: true,
         editor: true,
     },
     {
-        email: "reffede",
+        email: "refede",
         admin: true,
         editor: false,
     },

@@ -12,8 +12,10 @@
 }
 .catalogo .prod-cont .padder {
   padding: 10px;
+  height: fit-content;
   background-color: rgba(128, 128, 128, 0.297);
   border-radius: 4px;
+  position: relative;
 }
 .catalogo .prod-cont .padder:hover {
   cursor: pointer;
@@ -23,6 +25,29 @@
   border-radius: 4px;
   transition: all 0.4s ease-in-out;
 }
+.catalogo .prod-cont .padder:hover::before {
+  position: absolute;
+  visibility: visible;
+  top: 0;
+  left: 0;
+  content: "Agregar al 🛒";
+  transition: all 0.4s ease-in-out;
+}
+.catalogo .prod-cont .padder::before {
+  position: absolute;
+  visibility: hidden;
+  content: "Agregar al 🛒";
+  top: 0;
+  left: 0;
+  z-index: 33;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  transition-property: all;
+  line-height: 20px;
+  font-weight: bold;
+  font-size: .8rem;
+}
+
 .catalogo .prod-cont .padder img {
   transition: all 0.4s ease-in-out;
 }
