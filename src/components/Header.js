@@ -30,9 +30,9 @@ export default function Header({fn, clear, fnResetClear, logFn, toggleLogIn}) {
                 <input onKeyDown={event => inputHandler(event)} onChange={event => setInputVal(event.target.value)} value={inputVal} placeholder='Buscar productos...' type="search" name="search" id="search-bar" />
                 <nav className="pag-nav">
                     <NavLink className={({isActive}) => isActive ? "active" : ""} to="catalogo"><button className="nav-button">Catalogo</button></NavLink>
-                    <NavLink className={({isActive}) => isActive ? "active" : ""} to="tocalogo"><button className="nav-button">Tocalogo</button></NavLink>
+                    <NavLink className={({isActive}) => isActive ? "active" : ""} to="cuenta"><button className="nav-button">Cuenta</button></NavLink>
                     <NavLink className={({isActive}) => isActive ? "active" : ""} to="ogolatac"><button className="nav-button">Ogolatac</button></NavLink>
-                    <NavLink className={({isActive}) => isActive ? "active" : ""} to="cutulugu"><button className="nav-button">Cutulugu</button></NavLink>
+                    <NavLink className={({isActive}) => isActive ? "active" : ""} to="cutulugu"><button className="nav-button">Como Comprar</button></NavLink>
                 </nav>
             </div>
             <div style={{display: "flex", alignItems: "center", margin: "0 -30px 0 25px"}}>
@@ -41,7 +41,7 @@ export default function Header({fn, clear, fnResetClear, logFn, toggleLogIn}) {
                     <a className='link' target="blank" href="https://twitter.com/aguerosergiokun?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">T</a>
                     <a className='link' target="blank" href="https://www.instagram.com/leomessi/?hl=en">I</a>
                 </nav>
-                {logedUser ? <NavLink className={({isActive}) => isActive ? "active" : ""} to="carro"><button className="cart-but">🛒</button></NavLink> : <button onClick={() => logFn()} className="log-but">Log In</button>}
+                {logedUser ? <Link className={({isActive}) => isActive ? "active" : ""} to="carro"><button className="cart-but">🛒</button></Link> : <button onClick={() => logFn()} className="log-but">Ingresar</button>}
                 
             </div>        
         </header>

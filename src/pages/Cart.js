@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/Cart.css'
 import { Link } from 'react-router-dom'
 
-export default function Cart() {
+export default function Cart({ isLoged }) {
     const [cartItems, setCartItems] = React.useState(() => localStorage.getItem("cartProds") ? JSON.parse(localStorage.getItem("cartProds")) : [])  
     const [count, setCount] = React.useState(0)
 
@@ -10,11 +10,7 @@ export default function Cart() {
         setCartItems(oldItems => {
             for (let i = 0; i < oldItems.length; i++) {
                 if (oldItems[i].identifier === id) {
-                    if (cant === 1) {
-                        oldItems.splice(i, 1)
-                    }else {
-                        oldItems[i].cantidad--
-                    }
+                    cant === 1 ? oldItems.splice(i, 1) : oldItems[i].cantidad--
                 }
             }
             localStorage.setItem("cartProds", JSON.stringify(oldItems))
@@ -81,7 +77,7 @@ export default function Cart() {
                 <p className="cellphone"><span className="icon">📞</span> {item.phone}</p>
                 <p><span className="icon">🌎</span> {item.location.country}</p>
                 <p><span className="icon">{getAgeEmoji(item.dob.age, item.gender)}</span>{`Edad ${item.dob.age}`}</p> 
-                <p>{item.cantidad}</p>
+                <p>Cantidad {item.cantidad}</p>
                 <br />
                 <button onClick={() => removeFromCart(item.identifier, item.cantidad)}  className="remove-but">Remove from cart</button>
             </div>
@@ -92,11 +88,21 @@ export default function Cart() {
     )
     return (
         <div className="cart-items">
-            {itemsArr.length > 0 ? itemsArr : 
+            {isLoged ?
+                
+                itemsArr.length > 0 ?
+                    <div className='cart-wrapper'>
+                        {itemsArr}
+                    </div>
+                : 
+                    <div className='empty-cart-wrapper'>
+                        <p className='empty-cart-text'>No hay productos en el carro</p>
+                        <Link to={"/catalogo"}><button className='empty-cart-but'>Ver Productos en el Catalogo</button></Link>
+                    </div>
+            :
                 <div className='empty-cart-wrapper'>
-                    <p className='empty-cart-text'>No hay productos en el carro</p>
-                    <Link to={"/catalogo"}><button className='empty-cart-but'>Ver Productos en el Catalogo</button></Link>
-                </div> 
+                    <p className='empty-cart-text'>Debes estar registrado/a para ver el carro</p>
+                </div>
             }
         </div>
     )

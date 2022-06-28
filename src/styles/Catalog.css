@@ -30,6 +30,14 @@
   visibility: visible;
   top: 0;
   left: 0;
+  content: "";
+  transition: all 0.4s ease-in-out;
+}
+.catalogo .prod-cont .loged:hover::before {
+  position: absolute;
+  visibility: visible;
+  top: 0;
+  left: 0;
   content: "Agregar al 🛒";
   transition: all 0.4s ease-in-out;
 }
@@ -61,6 +69,8 @@
   align-items: center;
   width: 100%;
   justify-content: space-around;
+  background-color: rgb(241, 241, 241);
+  /* background-color: rgb(67, 67, 67); */
 }
 .page-select {
   margin: 1.3rem 0 ;

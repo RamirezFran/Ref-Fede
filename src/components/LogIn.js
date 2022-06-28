@@ -45,6 +45,7 @@ export default function LogIn({logFn, toggleLogIn}) {
             if (user.email === formState.email && user.password === formState.password) {
                 setErrorMsg("")
                 console.log("bienvenido " + user.name)
+                localStorage.setItem("activeUser", JSON.stringify(user))
                 return true
             }
         }

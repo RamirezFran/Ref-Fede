@@ -1,6 +1,7 @@
 .controls-bar {
     display: flex;
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 3px;
     margin: 20% 0;
     width: 25%;
     min-width: 180px;
@@ -9,6 +10,7 @@
     align-self: flex-start;
     padding: 10px;
     max-width: 20%;
+    /* color: white; */
 }
 .categ-title {
     position: absolute;
@@ -16,6 +18,7 @@
     left: 50%;
     transform: translate(-50%, -55%);
     background-color: rgb(241, 241, 241);
+    /* background-color: rgb(68, 68, 68); */
     font-weight: bold;
     font-size: 1.2rem;
     padding: 0 2.5%;
@@ -55,4 +58,9 @@
 }
 .categ-list-item select {
     text-transform: capitalize;
+    padding: .3rem;
+    /* background-color: rgb(68, 68, 68); */
+    /* color: white; */
+    /* border: 1px solid white; */
+    border-radius: 3px;
 }

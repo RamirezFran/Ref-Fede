@@ -8,6 +8,7 @@ import Catalog from "./pages/Catalog";
 import LogIn from "./components/LogIn"
 import ScrollReset from './components/ScrollReset'
 import Cart from './pages/Cart'
+import Account from './pages/Account'
 
 export const IsLoged = React.createContext(false)
 
@@ -26,12 +27,17 @@ export default function App() {
     }
     getData();
   }, []);
+  React.useEffect(() => {
+    if (!logedUser) {
+      localStorage.removeItem("cartProds")
+      localStorage.removeItem("activeUser")
+    }
+  }, [logedUser])
   function toggleForm() {
     setFormOpen(!formOpen)
   }
   function toggleLogIn() {
     setLogedUser(!logedUser)
-    console.log("toggled loged in " + logedUser)
   }
   function transfer(data) {
     setSearchData(data)
@@ -53,8 +59,9 @@ export default function App() {
               <Route path="/" element={<Main  />} />
               <Route
                 path="/catalogo"
-                element={<Catalog clFn={clearSearch} search={searchData} data={catalogData ? catalogData.results : []} />}
+                element={<Catalog clFn={clearSearch} search={searchData} data={catalogData ? catalogData.results : []} isLoged={logedUser} openLogForm={toggleForm} />}
               />
+              <Route path="/cuenta" element={<Account isLoged={logedUser} openLogForm={toggleForm} disc={toggleLogIn} />} />
               <Route
                 path="/cutulugu"
                 element={
@@ -65,7 +72,7 @@ export default function App() {
                   />
                 }
               />
-              <Route path="/carro" element={<Cart />} />
+              <Route path="/carro" element={<Cart isLoged={logedUser} />} />
               <Route path="/*" element={<p>404</p>} />
             </Routes>
             <Footer />

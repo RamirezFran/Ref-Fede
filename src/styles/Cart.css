@@ -4,6 +4,8 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 1rem;
+    min-height: ;
+
 }
 .cart-items .prod-cont {
     margin: 1rem;
@@ -13,11 +15,16 @@
     height: 100%;
 }
 .cart-items .prod-cont .prod-info {
+    margin-left: 35px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: rgb(196, 196, 196);
+}
+.cart-wrapper {
+    min-height: 30vw;
+    width: 100%;
 }
 .empty-cart-wrapper {
     display: flex;

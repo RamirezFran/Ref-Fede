@@ -2,7 +2,7 @@ import "../styles/Catalog.css";
 import React from "react";
 import Controles from '../components/Catalogo/Controles'
 
-export default function Catalog({ data, search, clFn }) {
+export default function Catalog({ data, search, clFn, isLoged, openLogForm }) {
   const [categ, setCateg] = React.useState({
       gender: "",
       serBy: "name",
@@ -90,6 +90,8 @@ export default function Catalog({ data, search, clFn }) {
       gender={item.gender}
       identifier={index}
       key={index}
+      isLoged={isLoged}
+      log={openLogForm}
     />
   ));
 
@@ -137,7 +139,7 @@ function getAgeEmoji(age, gender) {
   }
 }
 
-function CatalogItem({ image, name, phone, country, age, gender, item, identifier }) {
+function CatalogItem({ image, name, phone, country, age, gender, item, identifier, isLoged, log }) {
 
   function addToCart(item) {
     const identItem = {...item, identifier: identifier}
@@ -148,7 +150,7 @@ function CatalogItem({ image, name, phone, country, age, gender, item, identifie
 
   return (
     <div className="prod-cont">
-      <div onClick={() => addToCart(item)} className="padder">
+      <div onClick={isLoged ? () => addToCart(item) : () => log() } className={`padder${isLoged ? " loged" : ""}`}>
         <img className="image" src={image} alt="imagen" />
       </div>
       <p className="name">{name}</p>

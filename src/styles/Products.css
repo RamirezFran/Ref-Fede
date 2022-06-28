@@ -1,11 +1,11 @@
 .prod-container {
   display: flex;
   justify-content: center;
-  margin: 4rem 0;
+  margin: 1.5rem 0 5rem 0;
 }
 .prod-wraper {
   width: 25%;
-  height: 30vw;
+  height: 28vw;
   margin: 0 2%;
   background-position: center;
   background-repeat: no-repeat;
